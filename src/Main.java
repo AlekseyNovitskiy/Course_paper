@@ -27,22 +27,29 @@ public class Main {
     }
     public static void ListEmployers(Employee[] Employees) {
         for (Employee employee : Employees) {
-            System.out.println(employee);
+            if (employee != null) {
+                System.out.println(employee);
+            }
+
         }
     }
 
     public static int MonthlySalaries(Employee[] Employees) {
         int sumSalaries = 0;
         for (Employee employee : Employees) {
-            sumSalaries = sumSalaries + employee.getSalary();
+            if (employee != null) {
+                sumSalaries = sumSalaries + employee.getSalary();
+            }
         }
         return sumSalaries;
     }
     public static int MaximumSalary (Employee[] Employees) {
         int maxSum = Integer.MIN_VALUE;
         for (Employee employee : Employees) {
-            if (employee.getSalary() > maxSum) {
-                maxSum = employee.getSalary();
+            if (employee != null) {
+                if (employee.getSalary() > maxSum) {
+                    maxSum = employee.getSalary();
+                }
             }
         }
         return maxSum;
@@ -51,27 +58,40 @@ public class Main {
     public static int MinimumSalary (Employee[] Employees) {
         int minSum = Integer.MAX_VALUE;
         for (Employee employee : Employees) {
-            if (employee.getSalary() < minSum) {
-                minSum = employee.getSalary();
+            if (employee != null) {
+                if (employee.getSalary() < minSum) {
+                    minSum = employee.getSalary();
+                }
             }
         }
         return minSum;
     }
     public static double AverageSalary (Employee[] Employees) {
         double averageValue = 0;
-        for (int i = 0; i < Employees.length; i++) {
-            averageValue = MonthlySalaries(Employees);
-            averageValue /= 10;
+        int countEmployers = 0;
+        for (Employee employee : Employees) {
+            if (employee != null) {
+                countEmployers++;
+            }
         }
+        averageValue = MonthlySalaries(Employees);
+        averageValue /= countEmployers;
         return averageValue;
     }
 
     public static void AllEmployees (Employee[] Employees) {
         String allEmployees = null;
         for (Employee employee : Employees) {
-            allEmployees = employee.getName() + " " + employee.getSurname() + " " + employee.getPatronymic();
-            System.out.println(allEmployees);
+            if (employee != null) {
+                allEmployees = employee.getName() + " " + employee.getSurname() + " " + employee.getPatronymic();
+                System.out.println(allEmployees);
+            }
+
         }
     }
+
+
+
+
 
 }
