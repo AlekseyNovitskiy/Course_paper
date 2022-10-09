@@ -86,7 +86,6 @@ public class Main {
                 allEmployees = employee.getName() + " " + employee.getSurname() + " " + employee.getPatronymic();
                 System.out.println(allEmployees);
             }
-
         }
     }
 
