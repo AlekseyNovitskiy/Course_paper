@@ -50,6 +50,11 @@ public class Employee {
                 + this.patronymic + "', Зарплата " + this.salary + ", Отдел " + this.department;
     }
 
+    public String toStringDepartment() {
+        return "id=" + this.id + ", Имя '" + this.name + "', Фамилия '" + this.surname + "', Отчество '"
+                + this.patronymic + "', Зарплата " + this.salary;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
