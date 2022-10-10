@@ -153,7 +153,6 @@ public class Main {
         }
         return minSum;
     }
-
     public static double AverageSalaryDepartment(Employee[] Employees, String numDepartment) {
         double averageValue = 0;
         int countEmployers = 0;
